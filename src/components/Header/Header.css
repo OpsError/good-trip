@@ -1,0 +1,62 @@
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 30px 70px;
+}
+
+.header__container {
+    display: flex;
+    flex-direction: column;
+    margin-right: 15px;
+}
+
+.header__logo {
+    display: flex;
+}
+
+.header__name {
+    margin: 0 0 15px 0;
+    font-size: 40px;
+    font-weight: 700;
+}
+
+.header__description-logo {
+    margin: 0;
+    font-size: 20px;
+    display: flex;
+}
+
+.header__geo {
+    border: none;
+    background-color: transparent;
+    padding: 0;
+    height: 15px;
+    margin-top: 10px;
+    cursor: pointer;
+    opacity: 1;
+    transition: opacity .3s;
+}
+
+.header__geo:hover {
+    opacity: .7;
+}
+
+.header__geo-icon {
+    height: 100%;
+}
+
+.header__signin {
+    background-color: transparent;
+    border: none;
+    padding: 0;
+    font-size: 20px;
+    font-weight: 500;
+    cursor: pointer;
+    opacity: 1;
+    transition: opacity .5s linear;
+}
+
+.header__signin:hover {
+    opacity: .7;
+}
