@@ -5,6 +5,12 @@
     padding: 30px 70px;
 }
 
+@media screen and (max-width: 768px) {
+    .header {
+        padding: 30px;
+    }
+}
+
 .header__container {
     display: flex;
     flex-direction: column;
@@ -38,12 +44,28 @@
     transition: opacity .3s;
 }
 
+@media screen and (max-width: 768px) {
+    .header__geo {
+        display: none;
+    }
+}
+
 .header__geo:hover {
     opacity: .7;
 }
 
 .header__geo-icon {
     height: 100%;
+}
+
+.header__auto {
+    display: none;
+}
+
+@media screen and (min-width: 769px) {
+    .header__auto {
+        display: block;
+    }
 }
 
 .header__signin {
@@ -59,4 +81,24 @@
 
 .header__signin:hover {
     opacity: .7;
+}
+
+.header__navbar-button {
+    display: none;
+}
+
+@media screen and (max-width: 768px) {
+    .header__navbar-button {
+        display: block;
+        width: 50px;
+        height: 50px;
+        border: none;
+        background-color: transparent;
+        padding: 0;
+        cursor: pointer;
+    }
+
+    .header__navbar-icon {
+        width: 100%;
+    }
 }

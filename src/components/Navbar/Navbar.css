@@ -1,0 +1,41 @@
+.navbar {
+    background-color: rgba(0, 0, 0, .3);
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    visibility: hidden;
+    opacity: 0;
+    transition: visibility .3s, opacity .3s;
+}
+
+.navbar_active {
+    opacity: 1;
+    visibility: visible;
+
+    body {
+        overflow: hidden;
+    }
+}
+
+.navbar__container {
+    background-color: #fff;
+    width: 80vw;
+    height: 100vh;
+    position: fixed;
+    right: 0;
+}
+
+.navbar__elements {
+    list-style: none;
+    padding: 0;
+    margin: 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.navbar__geo-icon {
+    width: 15px;
+}

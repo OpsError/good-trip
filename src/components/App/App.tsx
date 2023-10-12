@@ -8,6 +8,7 @@ import PopupGeo from '../PopupGeo/PopupGeo';
 
 function App() {
   const [isOpenPopupGeo, setIsOpenPopupGeo] = React.useState<boolean>(false);
+  const [isOpenNavbar, setIsOpenNavbar] = React.useState<boolean>(false);
   const [cityHeader, setCityHeader] = React.useState<ICity>({
     key: 0, name: 'Москва'
   });
@@ -15,6 +16,11 @@ function App() {
 
   const openPopupGeo = () => {
     setIsOpenPopupGeo(isOpenPopupGeo => !isOpenPopupGeo);
+    setIsOpenNavbar(false);
+  }
+
+  const openNavbar = () => {
+    setIsOpenNavbar(isOpenNavbar => !isOpenNavbar);
   }
 
   const changeCity = (city: ICity) => {
@@ -33,7 +39,7 @@ function App() {
   }, []);
   return (
     <section className="App">
-      <Header city={cityHeader} openPopupGeo={openPopupGeo} />
+      <Header city={cityHeader} openPopupGeo={openPopupGeo} isOpenNavbar={isOpenNavbar} openNavbar={openNavbar} />
       <Main cityList={arrayPlaces} city={cityHeader} />
       <PopupGeo open={isOpenPopupGeo} openPopup={openPopupGeo} changeCity={changeCity} />
     </section>
