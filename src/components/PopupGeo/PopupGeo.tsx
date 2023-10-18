@@ -7,10 +7,11 @@ import { listCityFirstHalf, listCitySecondHalf } from "../../utils/ListCity";
 interface PopupGeoProps {
     open: boolean,
     openPopup: () => void,
-    changeCity: (city: ICity) => void
+    changeCity: (city: ICity) => void,
+    onClose: (evt: any) => void
 }
 
-const PopupGeo: FC<PopupGeoProps> = ({open, openPopup, changeCity}) => {
+const PopupGeo: FC<PopupGeoProps> = ({open, openPopup, changeCity, onClose}) => {
     const handleClickCity = (e: any) => {
         changeCity({
             key: e.target.value,
@@ -19,8 +20,8 @@ const PopupGeo: FC<PopupGeoProps> = ({open, openPopup, changeCity}) => {
     }
 
     return(
-        <Popup open={open} openPopup={openPopup}>
-            <div className="popup-geo__container">
+        <Popup open={open} openPopup={openPopup} onClose={onClose} nameClass="popup_geo">
+            <div className="popup-geo">
                 <h2 className="popup-geo__header">Выберите город:</h2>
                 <div className="popup-geo__city-list">
                     <ul className="popup-geo__list-half">
