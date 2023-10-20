@@ -6,12 +6,13 @@ import geoIcon from '../../images/geo-icon.svg';
 interface NavbarProps {
     open: boolean,
     openGeo: () => void,
-    city: ICity
+    city: ICity,
+    onClose: (evt: any) => void
 }
 
-const Navbar: FC<NavbarProps> = ({open, openGeo, city}) => {
+const Navbar: FC<NavbarProps> = ({open, openGeo, city, onClose}) => {
     return(
-        <section className={`header__navbar navbar ${open? 'navbar_active' : ''}`}>
+        <section className={`header__navbar navbar ${open? 'navbar_active' : ''}`} onClick={evt => onClose(evt)}>
             <div className='navbar__container'>
                 <ul className='navbar__elements'>
                     <li className='navbar__element' onClick={openGeo}>

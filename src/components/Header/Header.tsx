@@ -36,7 +36,7 @@ const Header: FC<HeaderProps> = ({openPopupGeo, city, isOpenNavbar, openNavbar, 
             <button className="header__navbar-button" onClick={openNavbar}>
                 <img className="header__navbar-icon" src={navbarIcon} alt="Навигация по сайту" />
             </button>
-            <Navbar open={isOpenNavbar} openGeo={openPopupGeo} city={city} />
+            <Navbar open={isOpenNavbar} openGeo={openPopupGeo} city={city} onClose={onClose} />
         </header>
     );
 }

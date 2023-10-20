@@ -11,9 +11,9 @@ interface PopupProps {
 
 const Popup: FC<PopupProps> = ({open, openPopup, children, nameClass, onClose}) => {
     return(
-        <section className={`popup ${open ? 'popup_opened' : ''}`} onMouseDown={evt => onClose(evt)}>
+        <section className={`popup ${open ? 'popup_opened' : ''}`} onMouseDown={evt => onClose(evt)} onKeyDown={evt => onClose(evt)}>
             <div className={`popup__container ${nameClass}`}>
-                <button onClick={openPopup} className="popup__close" />
+                <button onClick={onClose} className="popup__close" />
                 {children}
             </div>
         </section>

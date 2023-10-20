@@ -36,7 +36,7 @@ function App() {
   }
 
   const closePopupButton = (evt: any) => {
-    if (evt.target.classList.contains('popup') || (evt.target.classList.contains('popup__close')) || (evt.key === 'Escape')) {
+    if (evt.target.classList.contains('popup') || evt.target.classList.contains('navbar') || (evt.target.classList.contains('popup__close')) || (evt.key === 'Escape')) {
         closeAllPopups();
     }
 }

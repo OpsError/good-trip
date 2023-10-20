@@ -23,6 +23,12 @@
     font-weight: 400;
 }
 
+@media screen and (max-width: 768px) {
+    .search__input {
+        font-size: 15px;
+    }
+}
+
 .search__input-container:focus-within {
     outline: 1px solid #000;
 
@@ -43,8 +49,22 @@
     height: 34px;
     padding: 0;
     cursor: pointer;
+    box-sizing: border-box;
+}
+
+@media screen and (max-width: 768px) {
+    .search__icon-container {
+        width: 50px;
+        height: 24px;
+    }
 }
 
 .search__icon {
     width: 35px;
+}
+
+@media screen and (max-width: 768px) {
+    .search__icon {
+        width: 24px;
+    }
 }
