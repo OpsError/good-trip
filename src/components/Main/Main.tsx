@@ -6,14 +6,15 @@ import EntertainmentList from "../EntertainmentList/EntertainmentList";
 
 interface MainProps {
     cityList: IPlaces[],
-    city: ICity
+    city: ICity,
+    openInfo: (element: IPlaces) => void
 }
 
-const Main: FC<MainProps> = ({cityList, city}) => {
+const Main: FC<MainProps> = ({cityList, city, openInfo}) => {
     return(
         <main className="main">
             <Search />
-            <EntertainmentList cityList={cityList} city={city} />
+            <EntertainmentList cityList={cityList} city={city} openInfo={openInfo} />
         </main>
     );
 }

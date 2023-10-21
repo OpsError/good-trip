@@ -7,6 +7,7 @@ import api from '../../utils/Api';
 import Main from '../Main/Main';
 import PopupGeo from '../PopupGeo/PopupGeo';
 import PopupAuto from '../PopupAuto/PopupAuto';
+import Info from '../Info/Info';
 
 function App() {
   const [isOpenPopupGeo, setIsOpenPopupGeo] = React.useState<boolean>(false);
@@ -14,6 +15,17 @@ function App() {
   const [isOpenPopupAuto, setIsOpenPopupAuto] = React.useState<boolean>(false);
   const [cityHeader, setCityHeader] = React.useState<ICity>(JSON.parse(localStorage.getItem('city') || '{"key": 0, "name": "Москва"}'));
   const [arrayPlaces, setArrayPlaces] = React.useState<IPlaces[]>([]);
+  const [infoPlace, setInfoPlace] = React.useState<IPlaces>({
+    cityId: 1,
+    name: 'Москва',
+    link: 'https://i.pinimg.com/564x/56/92/f5/5692f5a366b22682934abc1a235d07c5.jpg',
+    address: '',
+    id: 1
+  });
+
+  const openInfoPlace = (element: IPlaces) => {
+    setInfoPlace(element);
+  }
 
   const openPopupGeo = () => {
     setIsOpenPopupGeo(true);
@@ -63,7 +75,8 @@ function App() {
     <section className="App">
       <Header city={cityHeader} openPopupGeo={openPopupGeo} isOpenNavbar={isOpenNavbar} openNavbar={openNavbar} openPopupAuto={openPopupAuto} onClose={closePopupButton} />
       <Routes>
-        <Route path='/*' element={<Main cityList={arrayPlaces} city={cityHeader} />} />
+        <Route path='/*' element={<Main cityList={arrayPlaces} city={cityHeader} openInfo={openInfoPlace} />} />
+        <Route path={`/${infoPlace.id}`} element={<Info city={infoPlace}  />} />
       </Routes>
       
       <PopupGeo open={isOpenPopupGeo} openPopup={openPopupGeo} changeCity={changeCity} onClose={closePopupButton} />
