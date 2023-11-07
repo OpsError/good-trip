@@ -1,4 +1,4 @@
-import React, {useEffect} from 'react';
+import React, {useEffect, FC} from 'react';
 import { Route, Routes } from 'react-router-dom';
 import './App.css';
 import Header from '../Header/Header';
@@ -8,8 +8,9 @@ import Main from '../Main/Main';
 import PopupGeo from '../PopupGeo/PopupGeo';
 import PopupAuto from '../PopupAuto/PopupAuto';
 import Info from '../Info/Info';
+import AuthForm from '../AuthForm/AuthForm';
 
-function App() {
+const App: FC = () => {
   const [isOpenPopupGeo, setIsOpenPopupGeo] = React.useState<boolean>(false);
   const [isOpenNavbar, setIsOpenNavbar] = React.useState<boolean>(false);
   const [isOpenPopupAuto, setIsOpenPopupAuto] = React.useState<boolean>(false);
@@ -77,6 +78,7 @@ function App() {
       <Routes>
         <Route path='/*' element={<Main cityList={arrayPlaces} city={cityHeader} openInfo={openInfoPlace} />} />
         <Route path={`/${infoPlace.id}`} element={<Info city={infoPlace}  />} />
+        <Route path='/auth' element={<AuthForm />} />
       </Routes>
       
       <PopupGeo open={isOpenPopupGeo} openPopup={openPopupGeo} changeCity={changeCity} onClose={closePopupButton} />
