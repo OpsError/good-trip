@@ -1,88 +1,28 @@
-import React, {useEffect, FC} from 'react';
+import React, { useState, useEffect, FC} from 'react';
 import { Route, Routes } from 'react-router-dom';
 import './App.css';
-import Header from '../Header/Header';
-import { ICity, IPlaces } from '../../types/types';
 import api from '../../utils/Api';
-import Main from '../Main/Main';
-import PopupGeo from '../PopupGeo/PopupGeo';
-import PopupAuto from '../PopupAuto/PopupAuto';
-import Info from '../Info/Info';
-import AuthForm from '../AuthForm/AuthForm';
+import Header from '../Header/Header';
+import { ICity } from '../../types/types';
 
 const App: FC = () => {
-  const [isOpenPopupGeo, setIsOpenPopupGeo] = React.useState<boolean>(false);
-  const [isOpenNavbar, setIsOpenNavbar] = React.useState<boolean>(false);
-  const [isOpenPopupAuto, setIsOpenPopupAuto] = React.useState<boolean>(false);
-  const [cityHeader, setCityHeader] = React.useState<ICity>(JSON.parse(localStorage.getItem('city') || '{"key": 0, "name": "Москва"}'));
-  const [arrayPlaces, setArrayPlaces] = React.useState<IPlaces[]>([]);
-  const [infoPlace, setInfoPlace] = React.useState<IPlaces>({
-    cityId: 1,
-    name: 'Москва',
-    link: 'https://i.pinimg.com/564x/56/92/f5/5692f5a366b22682934abc1a235d07c5.jpg',
-    address: '',
-    id: 1
-  });
+  const [city, setCity] = useState<ICity>({ name: '', _id: '' });
 
-  const openInfoPlace = (element: IPlaces) => {
-    setInfoPlace(element);
-  }
-
-  const openPopupGeo = () => {
-    setIsOpenPopupGeo(true);
-    setIsOpenNavbar(false);
-  }
-
-  const openNavbar = () => {
-    setIsOpenNavbar(true);
-  }
-
-  const openPopupAuto = () => {
-    setIsOpenPopupAuto(true);
-    setIsOpenNavbar(false);
-  }
-
-  const closeAllPopups = () => {
-    setIsOpenPopupGeo(false);
-    setIsOpenNavbar(false);
-    setIsOpenPopupAuto(false);
-  }
-
-  const closePopupButton = (evt: any) => {
-    if (evt.target.classList.contains('popup') || evt.target.classList.contains('navbar') || (evt.target.classList.contains('popup__close')) || (evt.key === 'Escape')) {
-        closeAllPopups();
-    }
-}
-
-  const changeCity = (city: ICity) => {
-    setCityHeader(city);
-    closeAllPopups();
-  }
-
+  // получение location или если его нет в localStorage, то
+  // в city вставить дефолтное значение
   useEffect(() => {
-    localStorage.setItem('city', JSON.stringify(cityHeader));
-  }, [cityHeader]);
-
-  const getPlacesCities = () => {
-    api.getPlaces()
-    .then((res: IPlaces[]) => setArrayPlaces(res))
-    .catch((res: any) => console.log(res));
-  }
-
-  React.useEffect(() => {
-    getPlacesCities();
+    const location: ICity = JSON.parse(localStorage.getItem('location') || "null");
+    if (location) {
+      setCity(location);
+    } else {
+      api.getCity('655cd9f4d98ebf6437548bc0')
+      .then((city) => setCity(city))
+      .catch(err => console.log(err));
+    }
   }, []);
   return (
     <section className="App">
-      <Header city={cityHeader} openPopupGeo={openPopupGeo} isOpenNavbar={isOpenNavbar} openNavbar={openNavbar} openPopupAuto={openPopupAuto} onClose={closePopupButton} />
-      <Routes>
-        <Route path='/*' element={<Main cityList={arrayPlaces} city={cityHeader} openInfo={openInfoPlace} />} />
-        <Route path={`/${infoPlace.id}`} element={<Info city={infoPlace}  />} />
-        <Route path='/auth' element={<AuthForm />} />
-      </Routes>
-      
-      <PopupGeo open={isOpenPopupGeo} openPopup={openPopupGeo} changeCity={changeCity} onClose={closePopupButton} />
-      <PopupAuto open={isOpenPopupAuto} openPopup={openPopupAuto} onClose={closePopupButton} />
+      <Header city={city} />
     </section>
   );
 }
