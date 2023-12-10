@@ -1,0 +1,16 @@
+.avatar-mini {
+    width: 48px;
+    height: 48px;
+}
+
+@media screen and (max-width: 769px) {
+    .avatar-mini {
+        width: 38px;
+        height: 38px;
+    }
+}
+
+.avatar-mini__image {
+    width: 100%;
+    border-radius: 50%;
+}

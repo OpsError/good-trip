@@ -1,0 +1,11 @@
+.like-button {
+    width: 18px;
+    height: 18px;
+    padding: 0;
+    border: 0;
+    background-color: transparent;
+}
+
+.like-button__icon {
+    width: 100%;
+}

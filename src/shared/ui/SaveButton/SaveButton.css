@@ -1,0 +1,11 @@
+.button-save {
+    width: 18px;
+    height: 18px;
+    padding: 0;
+    border: 0;
+    background-color: transparent;
+}
+
+.button-save__icon {
+    width: 100%;
+}
