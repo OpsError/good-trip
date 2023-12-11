@@ -7,7 +7,7 @@ import exampleImage from '../example-img.jpg';
 import Popup from "../shared/ui/Popup/Popup";
 
 const App = () => {
-    const text = "qwqwq qwqwq qwqqqqqqq qwqwq qwqwq qwqqqqqqq qwqwq qwqwq qwqqqqqqq qwqwq qwqwq qwqqqqqqq qwqwq qwqwq qwqqqqqqq qwqwq qwqwq qwqqqqqqq qwqwq qwqwq qwqqqqqqq qwqwq qwqwq qwqqqqqqq qwqwq qwqwq qwqqqqqqq qwqwq qwqwq qwqqqqqqq qwqwq qwqwq qwqqqqqqq qwqwq qwqwq qwqqqqqqq qwqwq qwqwq qwqqqqqqq qwqwq qwqwq qwqqqqqqq qwqwq qwqwq qwqqqqqqq";
+    const text = "qwqwq qwqwq qwqqqqqqq qwqwq qwqwq qwqqqqqqq qwqwq qwqwq qwqqqqqqq qwqwq qwqwq qwqwq qwqqqqqqq qwqwq qwqwq qwqqqqqqq qwqwq qwqwq qwqwq qwqqqqqqq qwqwq qwqwq qwqqqqqqq qwqwq qwqwq qwqwq qwqqqqqqq qwqwq qwqwq qwqqqqqqq qwqwq qwqwq qwqwq qwqqqqqqq qwqwq qwqwq qwqqqqqqq qwqwq qwqwq qwqwq qwqqqqqqq qwqwq qwqwq qwqqqqqqq qwqwq qwqwq qwqwq qwqqqqqqq qwqwq qwqwq qwqqqqqqq qwqwq qwqwq qwqwq qwqqqqqqq qwqwq qwqwq qwqqqqqqq qwqwq qwqwq qwqwq qwqqqqqqq qwqwq qwqwq qwqqqqqqq qwqwq qwqwq qwqqqqqqq qwqwq qwqwq qwqqqqqqq qwqwq qwqwq qwqqqqqqq qwqwq qwqwq qwqqqqqqq qwqwq qwqwq qwqqqqqqq qwqwq qwqwq qwqqqqqqq qwqwq qwqwq qwqqqqqqq qwqwq qwqwq qwqqqqqqq qwqwq qwqwq qwqqqqqqq qwqwq qwqwq qwqqqqqqq qwqwq qwqwq qwqqqqqqq qwqwq qwqwq qwqqqqqqq";
     return (
         <>
             <Popup
