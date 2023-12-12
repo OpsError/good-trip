@@ -1,0 +1,18 @@
+.button-submit {
+    background-color: transparent;
+    margin-top: 25px;
+    padding: 7px 8px;
+    font-size: 20px;
+    letter-spacing: 1.5px;
+    cursor: pointer;
+    border-radius: 7px;
+    opacity: 1;
+    border: 1.5px solid darkgrey;
+    box-shadow: none;
+    transition: opacity .3s, box-shadow .3s;
+}
+
+.button-submit:hover {
+    opacity: .8;
+    box-shadow: 0px 5px 7px 0px rgba(0, 0, 0, 0.5)
+}

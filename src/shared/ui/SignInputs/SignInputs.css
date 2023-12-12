@@ -1,0 +1,47 @@
+.formAuth__form {
+    display: flex;
+    flex-direction: column;
+    margin-top: 20px;
+}
+
+.formAuth__label {
+    font-size: 16px;
+    letter-spacing: 1.2px;
+}
+
+.formAuth__label:not(:first-of-type) {
+    margin-top: 15px;
+}
+
+.formAuth__input {
+    margin-top: 5px;
+    font-size: 17px;
+    padding: 3px;
+    border: none;
+    border-bottom: 1px solid #b0b0b0;
+    outline: none;
+    transition: border-bottom .3s;
+}
+
+.formAuth__input:focus {
+    border-bottom: 1px solid #000;
+}
+
+.formAuth__input_error {
+    border-bottom: 1px solid red;
+}
+
+.formAuth__input_error:focus {
+    border-bottom: 1px solid red;
+}
+
+.formAuth__error {
+    margin: 3px 0 0;
+    font-size: 13px;
+    color: red;
+    visibility: hidden;
+}
+
+.formAuth__error_active {
+    visibility: visible;
+}
