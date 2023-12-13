@@ -11,7 +11,7 @@ interface SaveButtonProps {
 const SaveButton: FC<SaveButtonProps> = ({ highClass, isSaved }) => {
     const buttonIcon = isSaved ? savedIcon : saveIcon;
     return(
-        <button className={`${highClass} button-save`}>
+        <button className={`${highClass}__save button-save`}>
             <img className='button-save__icon' src={buttonIcon} alt='Сохранить' />
         </button>
     );

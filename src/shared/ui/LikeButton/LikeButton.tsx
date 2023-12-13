@@ -11,7 +11,7 @@ interface LikeButtonProps {
 const LikeButton: FC<LikeButtonProps> = ({ highClass, isLiked }) => {
     const likeButton = isLiked? likeActive : likeDisable;
     return(
-        <button className={`${highClass} like-button`}>
+        <button className={`${highClass}__like like-button`}>
             <img className='like-button__icon' src={likeButton} alt='#' />
         </button>
     );

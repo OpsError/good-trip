@@ -1,16 +1,19 @@
 import { FC, ReactNode } from 'react';
 import './SignInputs.css';
 
-interface SigninInputsProps {
+interface SignupInputsProps {
     buttonSubmit: ReactNode
 }
 
-const SigninInputs: FC<SigninInputsProps> = ({
+const SignupInputs: FC<SignupInputsProps> = ({
     buttonSubmit
 }) => {
     // класс ошибки для инпута formAuth__input_error
     return(
         <form className='formAuth__form'>
+            <label className='formAuth__label'>Имя пользователя</label>
+            <input placeholder='Имя пользователя' type='text' className='formAuth__input'></input>
+            <p className='formAuth__error'>Такое имя уже существует</p>
             <label className='formAuth__label'>Эл. адрес</label>
             <input placeholder='Email' type='email' className='formAuth__input'></input>
             <p className='formAuth__error'>Неверный логин</p>
@@ -22,4 +25,4 @@ const SigninInputs: FC<SigninInputsProps> = ({
     )
 }
 
-export default SigninInputs;
+export default SignupInputs;

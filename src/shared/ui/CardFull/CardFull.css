@@ -1,0 +1,154 @@
+.cardFull {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.cardFull__header {
+    display: flex;
+    justify-content: space-between;
+    background-color: bisque;
+    position: sticky;
+    padding: 15px 0 0;
+    top: 0px;
+}
+
+.cardFull__user-info {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.cardFull__usernames {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.cardFull__name {
+    margin: 0;
+    font-size: 20px;
+    font-weight: 500;
+}
+
+@media screen and (max-width: 769px) {
+    .cardFull__name {
+        font-size: 17px;
+    }
+}
+
+@media screen and (max-width: 426px) {
+    .cardFull__name {
+        font-size: 14px;
+    }
+}
+
+.cardFull__username {
+    margin: 0;
+    font-size: 17px;
+}
+
+@media screen and (max-width: 769px) {
+    .cardFull__username {
+        font-size: 14.5px;
+    }
+}
+
+@media screen and (max-width: 426px) {
+    .cardFull__username {
+        font-size: 11px;
+    }
+}
+
+.cardFull__close {
+    width: 20px;
+    height: 20px;
+    background-image: url('../../../images/close-icon.svg');
+    background-size: 20px 20px;
+    cursor: pointer;
+}
+
+@media screen and (max-width: 426px) {
+    .cardFull__close {
+        width: 15px;
+        height: 15px;
+        background-size: 15px 15px;
+    }
+}
+
+.cardFull__image-container {
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    justify-self: center;
+}
+
+/* @media screen and (max-width: 615px) {
+    .cardFull__image-container {
+        height: 60%;
+    }
+}
+
+@media screen and (max-width: 470px) {
+    .cardFull__image-container {
+        height: 50%;
+    }
+}
+
+@media screen and (max-width: 360px) {
+    .cardFull__image-container {
+        height: 40%;
+    }
+} 
+*/
+
+.cardFull__image {
+    width: 100%;
+    object-fit: contain;
+    border-radius: 20px;
+
+}
+
+.cardFull__title {
+    margin: 0;
+    font-size: 18px;
+    font-weight: 500;
+}
+
+@media screen and (max-width: 560px) {
+    .cardFull__title {
+        font-size: 16px;
+    }
+}
+
+@media screen and (max-width: 426px) {
+    .cardFull__title {
+        font-size: 14px;
+    }
+}
+
+.cardFull__description {
+    margin-top: 10px;
+    font-size: 15px;
+    font-weight: 400;
+    line-height: 1.5;
+}
+
+@media screen and (max-width: 560px) {
+    .cardFull__description {
+        font-size: 14px;
+    }
+}
+
+@media screen and (max-width: 426px) {
+    .cardFull__description {
+        font-size: 12px;
+    }
+}
+
+.cardFull__widgets {
+    display: flex;
+    justify-content: space-between;
+}
